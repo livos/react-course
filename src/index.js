@@ -2,19 +2,32 @@ import ReactDOM from 'react-dom'
 
 // Nested components, React tools
 
-const Greeting = () => {
+const BookList = () => {
   return (
-    <div>
-      <Person />
-      <Message />
-    </div>
+    <section>
+      <Book />
+      <Book />
+      <Book />
+    </section>
   )
 }
 
-const Person = () => <h2>john doe</h2>
-const Message = () => {
-  return <p>this is my message</p>
+// explicit return
+const Book = () => {
+  return (
+    <article>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  )
 }
 
+// implicit return
+const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/91AfEwKjDgL._AC_UL604_SR604,400_.jpg" alt=""/>
+const Author = () => <h4>Don Miguel Ruiz</h4>
+const Title = () => <h1>The Four Agreements: A Practical Guide to Personal Freedom</h1>
 
-ReactDOM.render(<Greeting />, document.getElementById('root'))
+
+
+ReactDOM.render(<BookList />, document.getElementById('root'))
