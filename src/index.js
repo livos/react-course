@@ -7,34 +7,23 @@ const BookList = () => {
   return (
     <section className='booklist'>
       <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
     </section>
   )
 }
 
 // explicit return
+const author = "Don Miguel Ruiz"
 const Book = () => {
+  const title = "The Four Agreements: A Practical Guide to Personal Freedom"
   return (
     <article className='book'>
-      <Image />
-      <Title />
-      <Author />
+      <img src="https://images-na.ssl-images-amazon.com/images/I/91AfEwKjDgL._AC_UL604_SR604,400_.jpg" alt=""/>
+      <h1>{title}</h1>
+      <h4>{author.toUpperCase()}</h4>
+      {/* <p>{something with comment}</p> */}
+      <p>{6 + 6}</p>
     </article>
   )
 }
-
-// implicit return
-const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/91AfEwKjDgL._AC_UL604_SR604,400_.jpg" alt=""/>
-const Author = () => <h4 style={{ color:'#617d98', fontSize:'0.75rem', marginTop:'0.25rem'}}>Don Miguel Ruiz</h4>
-const Title = () => <h1>The Four Agreements: A Practical Guide to Personal Freedom</h1>
-
-
 
 ReactDOM.render(<BookList />, document.getElementById('root'))
