@@ -21,7 +21,9 @@ const BookList = () => {
       <Book 
         img={firstBook.img} 
         title={firstBook.title} 
-        author={firstBook.author}/>
+        author={firstBook.author}>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci illum ut quod ea quo nostrum, iusto ullam deserunt molestiae minus.</p>
+        </Book>
       <Book 
         img={secondBook.img} 
         title={secondBook.title} 
@@ -31,13 +33,14 @@ const BookList = () => {
 }
 
 // explicit return
-const Book = ({img, title, author}) => {  
-  // const {img, title, author} = props
+const Book = (props) => {  
+  const {img, title, author} = props
   return (
     <article className='book'>
       <img src={img} alt=""/>
       <h1>{title}</h1>
       <h4>{author}</h4>
+      { props.children }
     </article>
   )
 }
