@@ -3,26 +3,9 @@ import ReactDOM from 'react-dom'
 // CSS
 import './index.css'
 
-const books = [
-  {
-    id:1,
-    img: "https://images-na.ssl-images-amazon.com/images/I/51oVrNQVLiL._SX345_BO1,204,203,200_.jpg",
-    title: "The Four Agreements: A Practical Guide to Personal Freedom",
-    author: "Don Miguel Ruiz"
-  }, 
-  {
-    id:2,
-    img: "https://m.media-amazon.com/images/I/41e+bOAeE-L.jpg",
-    title: "The Maid: A Novel",
-    author: "Nita Prose"
-  }, 
-  {
-    id:3,
-    img: "https://m.media-amazon.com/images/I/41EiBLxybSL.jpg",
-    title: "Reminders of Him: A Novel",
-    author: "Colleen Hoover"
-  }  
-]
+import {books} from './books'
+import Book from './Book'
+
 
 const BookList = () => {
   return (
@@ -31,31 +14,6 @@ const BookList = () => {
         const { img, title, author } = book
         return <Book key={book.id} {...book}></Book>
     })}</section>
-  )
-}
-
-const Book = ({ img, title, author }) => {
-  const clickHandler = (e) => {
-    console.log(e)
-    console.log(e.target)
-    alert('hello world')
-  }
-
-  const complexExample = (author) => {
-    console.log(author)
-  }
-  return (
-    <article className='book' onMouseOver={() => {
-      console.log(author)
-    }}>
-      <img src={img} alt=""/>
-      <h1 onClick={() => console.log(title)}>{title}</h1>
-      <h4>{author}</h4>
-      <button type="button" onClick={clickHandler}>
-        reference example
-      </button>
-      <button type="button" onClick={() => complexExample(author)}>nore comples example</button>
-    </article>
   )
 }
 
